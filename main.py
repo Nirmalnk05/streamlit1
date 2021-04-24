@@ -5,7 +5,7 @@
 import streamlit as st
 import pandas as pd
 from PIL import Image
-import pydrive
+
 import matplotlib.pyplot as plt
 import numpy as np
 import glob
@@ -13,8 +13,7 @@ import os
 import re
 from sklearn import preprocessing
 from imblearn.over_sampling import SMOTE
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import f1_score, confusion_matrix, classification_report
