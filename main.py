@@ -6,7 +6,7 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import glob
 import os
@@ -149,10 +149,8 @@ def main():
                 end = 0
 
                 a = df4[col]
-                plt.plot(a)  # plot rolling std of pressure
-                plt.show()
+
                 b = a.quantile(0.7)  # threshold set here : 70 percentile
-                print(b)
                 x = df4[col] > b  # find values greater than threshold
 
                 # print(a)
@@ -204,10 +202,8 @@ def main():
                 end = 0
                 print(col)  # file name
                 a = df12[col]
-                plt.plot(a)  # plot rolling std of pressure
-                plt.show()
+
                 b = a.quantile(0.7)  # threshold set here : 70 percentile
-                print(b)
                 x = df12[col] > b  # find values greater than threshold
                 # print(a)
                 for i, j in enumerate(a):
@@ -355,8 +351,7 @@ def main():
             # a = df4[col]
             a = df4['roll_std']
             st.write(a)
-            # plt.plot(a)  # plot rolling std of pressure
-            # plt.show()
+
             b = a.quantile(0.7)  # threshold set here : 70 percentile
             # print(b)
             st.write(b)
@@ -385,9 +380,7 @@ def main():
                 transient_width = end - start
             else:
                 transient_width = 0
-            # print(start, end)
-            # plt.plot(a[start:end])
-            # plt.show()
+
 
             df12 = pd.DataFrame()
             df12['roll_std_den'] = (df['Density'].rolling(300).std())
@@ -401,8 +394,7 @@ def main():
             # print(col)  # file name
             # a = df4[col]
             p = df12['roll_std_den']
-            # plt.plot(a)  # plot rolling std of pressure
-            # plt.show()
+
             q = p.quantile(0.7)  # threshold set here : 70 percentile
             # print(b)
             # st.write(b)
