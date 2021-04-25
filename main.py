@@ -56,12 +56,12 @@ def main():
 
     if choice == "Model Training":
         if st.button("Start Train") :
-            allResults = glob.glob('/streamlit1/batch31-38_with_target_diff_prx_2000tampered/*.csv',
+            allResults = glob.glob('batch31-38_with_target_diff_prx_2000tampered/*.csv',
                                    recursive=True)
             allResults = sorted(allResults, key=lambda x: (x.split("/")[-1]))
             #st.write(allResults)
 
-            newpath1 = '/streamlit1/batch31-38_with_target_diff_prx_2000tampered/'
+            newpath1 = 'batch31-38_with_target_diff_prx_2000tampered/'
             # newpath1='/content/drive/MyDrive/OIL SAMPLES DATA1/'
 
             folder = newpath1  ## data directory
@@ -136,7 +136,7 @@ def main():
             # for i,j in enumerate(allResults):
             for i, j in enumerate(dff['file']):
                 # print(i,j)
-                df = pd.read_csv('/streamlit1/batch31-38_with_target_diff_prx_2000tampered/' + j)
+                df = pd.read_csv('batch31-38_with_target_diff_prx_2000tampered/' + j)
                 head, tail = os.path.split(j)
                 # print(i,df.shape[1])
                 df4[tail] = (df['Pressure_tmp'].rolling(300).std())
@@ -188,7 +188,7 @@ def main():
             df12 = pd.DataFrame()
             for i, j in enumerate(dff['file']):
                 # print(i,j)
-                df = pd.read_csv('/streamlit1/batch31-38_with_target_diff_prx_2000tampered/' + j)
+                df = pd.read_csv('batch31-38_with_target_diff_prx_2000tampered/' + j)
                 head, tail = os.path.split(j)
                 # print(i,df.shape[1])
                 df12[tail] = (df['Density'].rolling(300).std())
