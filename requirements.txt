@@ -3,4 +3,4 @@ pandas
 scikit_learn
 numpy
 imbalanced-learn
-PILLOW
+Pillow
