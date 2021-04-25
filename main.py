@@ -300,7 +300,7 @@ def main():
         if st.button("Process") and data_file is not None:
             file_details = {"Filename": data_file.name, "FileType": data_file.type, "FileSize": data_file.size}
             st.write(file_details)
-'''
+
             df = pd.read_csv(data_file)
             st.dataframe(df)
 
@@ -451,6 +451,6 @@ def main():
                 st.write(f'Predicted Contaminant: Water+Sludge')
             if result==3:
                 st.write('No Contaminant')
-'''
+
 if __name__ == "__main__":
     main()
