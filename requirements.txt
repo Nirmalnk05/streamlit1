@@ -4,5 +4,3 @@ scikit_learn
 numpy
 imbalanced-learn
 Pillow
-pickle
-glob
